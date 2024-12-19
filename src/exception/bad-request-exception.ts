@@ -1,8 +1,8 @@
 import { GlobalException } from "./global-exception-handler";
-import { ErrorCode } from "./custom-status-code";
+import { StatusCode } from "./custom-status-code";
 
 export class BadRequestExceptionHandler extends GlobalException {
-    constructor(message: string, errorCode: ErrorCode = ErrorCode.BAD_REQUEST) {
-        super(message, errorCode, 400, null);
+    constructor(message: string , statusCode: StatusCode = StatusCode.BAD_REQUEST, errors: any) {
+        super(message, statusCode, errors);
     }
 }
